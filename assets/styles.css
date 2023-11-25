@@ -1,0 +1,17 @@
+:root {
+    --darkTurk: #66bfbf;
+    --lightTurq: #eaf6f6;
+    --offWhite: #fcfefe;
+    --pink: #f76b8a;
+}
+
+body {
+    background-color: var(--offWhite);
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
