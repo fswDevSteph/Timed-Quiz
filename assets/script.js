@@ -24,7 +24,15 @@ var questions = [
       { text: 'orange', correct: true },
       { text: 'black', correct: false },
     ],
-  
+    //question
+    question: 'more sample questions?',
+    //Answers array
+    answers: [
+      { text: 'X', correct: false },
+      { text: 'Y', correct: true },
+      { text: 'Z', correct: false },
+    ],
+  },
 ];
 //reference to the score element
 var scoreDisplay = document.getElementById('scoreDisplay');
