@@ -8,29 +8,105 @@ var currentQuestionIndex = 0;
 var score = 0; // Initialize the score variable
 var questions = [
   {
-    //question
-    question: 'What main coding language are we learning?',
+    //question 1
+    question: 'Who said, "Believe you can and yo are halfway there"?',
+    //correct answer
+    correctAnswer: 'Theodore Roosevelt',
     //Answers array
     answers: [
-      { text: 'Python', correct: false },
-      { text: 'Java', correct: false },
-      { text: 'JavaScript', correct: true },
+      { text: 'Albert Einstein', correct: false },
+      { text: 'Michael Jackson', correct: false },
+      { text: 'Theodore Roosevelt', correct: true },
     ],
-    //question
-    question: 'What color does red and yellow make?',
+  },
+  {
+    //question 2
+    question:
+      'Who is known for the quote, "The only way to do great work is to love what you do"?',
+    //correct answer
+    correctAnswer: 'Confucius',
     //Answers array
     answers: [
-      { text: 'lighter red', correct: false },
-      { text: 'orange', correct: true },
-      { text: 'black', correct: false },
+      { text: 'Steve Jobs', correct: false },
+      { text: 'Confucius', correct: true },
+      { text: 'Ellen', correct: false },
     ],
-    //question
-    question: 'more sample questions?',
+  },
+  {
+    //question 3
+    question:
+      'Which individual stated, "The future belongs to those who believe in the beauty of their dreams"?',
+    //correct answer
+    correctAnswer: 'Eleanor Roosevelt',
     //Answers array
     answers: [
-      { text: 'X', correct: false },
-      { text: 'Y', correct: true },
-      { text: 'Z', correct: false },
+      { text: 'Eleanor Roosevelt', correct: true },
+      { text: 'Nelson Mandela', correct: false },
+      { text: 'Oprah Winfrey', correct: false },
+    ],
+  },
+  {
+    //question 4
+    question: 'Who said, "In the middle of difficulty lies opportunity"?',
+    //correct answer
+    correctAnswer: 'Albert Einstein',
+    //Answers array
+    answers: [
+      { text: 'Albert Einstein', correct: true },
+      { text: 'Thomas Edison', correct: false },
+      { text: 'Isaac Newton', correct: false },
+    ],
+  },
+  {
+    //question 5
+    question:
+      'Which famous figure declared, "It always seems impossible until it is done"?',
+    //correct answer
+    correctAnswer: 'Nelson Mandela',
+    //Answers array
+    answers: [
+      { text: 'Martin Luther King Jr.', correct: false },
+      { text: 'Mahatma Gandhi', correct: false },
+      { text: 'Nelson Mandela', correct: true },
+    ],
+  },
+  {
+    //question 6
+    question:
+      'Who is credited with the quote, "The only limit to our realization of tomorrow will be our doubts of today"?',
+    //correct answer
+    correctAnswer: 'Franklin D. Roosevelt',
+    //Answers array
+    answers: [
+      { text: 'Abraham Lincoln', correct: false },
+      { text: 'Franklin D. Roosevelt', correct: true },
+      { text: 'Martha Stewert', correct: false },
+    ],
+  },
+  {
+    // Question 7
+    question:
+      'Which famous figure stated, "The best way to predict the future is to create it"?',
+    // Correct answer
+    correctAnswer: 'Peter Drucker',
+    // Answers array
+    answers: [
+      { text: 'Mark Zuckerberg', correct: false },
+      { text: 'Peter Drucker', correct: true },
+      { text: 'Elon Musk', correct: false },
+    ],
+  },
+  {
+    // Question 8
+    question:
+      'Which individual is credited with the quote, "You miss 100% of the shots you don\'t take"?',
+    // Correct answer
+    correctAnswer: 'Wayne Gretzky',
+    // Answers array
+    answers: [
+      { text: 'Wayne Gretzky', correct: true },
+      { text: 'Michael Jordan', correct: false },
+      { text: 'Kobe Bryant', correct: false },
     ],
   },
 ];
