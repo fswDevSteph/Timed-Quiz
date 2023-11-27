@@ -9,7 +9,7 @@ var score = 0; // Initialize the score variable
 var questions = [
   {
     //question 1
-    question: 'Who said, "Believe you can and yo are halfway there"?',
+    question: 'Who said, "Believe you can and you are halfway there"?',
     //correct answer
     correctAnswer: 'Theodore Roosevelt',
     //Answers array
