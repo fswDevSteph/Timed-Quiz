@@ -1,5 +1,4 @@
 // keep ALL variables at the top
-
 var grabStartBtn = document.getElementById('startBtn'); //creates  reference to HTML button with id 'startBtn'
 /*Timer variables*/
 var timer; //To store the interval ID
@@ -7,14 +6,17 @@ var timeRemaining = 120; //time in seconds
 var currentQuestionIndex = 0;
 var score = 0; // Initialize the score variable
 var questions = [
+  // questions variable is an array
   {
-    //question 1
+    //has 3 main objects
     question: 'Who said, "Believe you can and you are halfway there"?',
-    //correct answer
+    //correct answer name / value pair
     correctAnswer: 'Theodore Roosevelt',
     //Answers array
     answers: [
-      { text: 'Albert Einstein', correct: false },
+      // made up of 3 objects.
+
+      { text: 'Albert Einstein', correct: false }, //each object has 2 properties
       { text: 'Michael Jackson', correct: false },
       { text: 'Theodore Roosevelt', correct: true },
     ],
@@ -160,6 +162,24 @@ function displayQuestion() {
   document.getElementById('quizContainer').appendChild(h2Question);
 
   //next step is to loop through
+  for (var i = 0; i < currentQuestion.answers.length; i++) {
+    //here you will add console.log
+    console.log(currentQuestion.answers[i]);
+    var answerBtn = document.createElement('button');
+
+    answerBtn.innerText = currentQuestion.answers[i].text;
+    //
+    document.getElementById('quizContainer').appendChild(answerBtn);
+    answerBtn.addEventListener('click', function (event) {
+      console.log(event.target);
+
+      if (event.target.innerText === currentQuestion.correctAnswer) {
+        console.log('clicked right answer');
+        //clear section with questions and increase Question index counter
+        //show questions again w/ new index counter
+      }
+    });
+  }
 }
 
 // Attached eventListener to the button to trigger the function
