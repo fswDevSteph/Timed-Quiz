@@ -1,5 +1,3 @@
-// TO DO: store users name in local storage.
-
 // keep ALL variables at the top
 var grabStartBtn = document.getElementById('startBtn'); //creates  reference to HTML button with id 'startBtn'
 /*Timer variables*/
@@ -187,7 +185,7 @@ function displayQuestion() {
   //next step is to loop through
   for (var i = 0; i < currentQuestion.answers.length; i++) {
     //here you will add console.log
-    console.log(currentQuestion.answers[i]);
+    //console.log(currentQuestion.answers[i]);
     var answerBtn = document.createElement('button');
 
     answerBtn.innerText = currentQuestion.answers[i].text;
@@ -211,13 +209,15 @@ function displayQuestion() {
 document
   .getElementById('quizContainer')
   .addEventListener('click', function (event) {
+    //start of function
     event.preventDefault();
     console.log(currentQuestionIndex);
     if (questions[currentQuestionIndex]) {
-      displayQuestion();
-      currentQuestionIndex++;
+      //ts saying "if theres any q's left in q's array"
+      currentQuestionIndex++; //then increment currentQuestionINdex by 1
+      displayQuestion(); //calling function degined elsewhere to display next question
     } else {
-      handleHighScore();
+      handleHighScore(); // else calls handleHIghscore func
     }
   });
 
