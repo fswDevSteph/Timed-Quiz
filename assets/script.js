@@ -1,3 +1,5 @@
+// TO DO: store users name in local storage.
+
 // keep ALL variables at the top
 var grabStartBtn = document.getElementById('startBtn'); //creates  reference to HTML button with id 'startBtn'
 /*Timer variables*/
@@ -5,6 +7,24 @@ var timer; //To store the interval ID
 var timeRemaining = 120; //time in seconds
 var currentQuestionIndex = 0;
 var score = 0; // Initialize the score variable
+function handleHighScore() {
+  var typeInitials = document.getElementById('typeInitial');
+  var saveBtn = document.getElementById('saveBtn');
+  saveBtn.addEventListener('click', function () {
+    var usersArray = JSON.parse(localStorage.getItem('user')) || []; //JSON.parse turns a string into an array
+    usersArray.append({ initials: typeInitials, score: score });
+    localStorage.setItem('user', JSON.stringify(usersArray));
+  }); // stringify turns array back into a string
+
+  var grabQuizContainer = document.getElementById('quizContainer');
+  grabQuizContainer.classList.add('hide');
+  //in event listener have get and set item
+
+  //set itemfunction to store changed array (this is the one i get with get item)
+  //();
+  var resultsContainer = document.getElementById('resultsContainer');
+  resultsContainer.append(initialBox, submitInitials); //<-note to add css
+}
 var questions = [
   // questions variable is an array
   {
@@ -143,8 +163,9 @@ grabStartBtn.addEventListener('click', clickedToStartTimerPresentQuestion);
 function clickedToStartTimerPresentQuestion() {
   //set all of the elements in the original display to be hidden
   var gameRules = document.getElementById('gameRules');
-  document.getElementById('startBtn').style.display = 'none';
+  //document.getElementById('startBtn').style.display = 'none';
   gameRules.style.display = 'none';
+  grabStartBtn.classList.add('hide');
   //call two other starting functions
   startTimer();
   displayQuestion();
@@ -175,15 +196,31 @@ function displayQuestion() {
 
       if (event.target.innerText === currentQuestion.correctAnswer) {
         console.log('clicked right answer');
-        //clear section with questions and increase Question index counter
-        //show questions again w/ new index counter
+        score++;
+        scoreDisplay.textContent = 'score: ' + score;
+      } else {
+        timeRemaining--;
       }
+      //clear section with questions and increase Question index counter
+      //show questions again w/ new index counter
     });
   }
 }
+document
+  .getElementById('quizContainer')
+  .addEventListener('click', function (event) {
+    event.preventDefault();
+    console.log(currentQuestionIndex);
+    if (questions[currentQuestionIndex]) {
+      displayQuestion();
+      currentQuestionIndex++;
+    } else {
+      handleHighScore();
+    }
+  });
 
 // Attached eventListener to the button to trigger the function
-grabStartBtn.addEventListener('click', clickedToStartTimerPresentQuestion);
+/*grabStartBtn.addEventListener('click', clickedToStartTimerPresentQuestion);
 function clickedToStartTimerPresentQuestion() {
   //set all of the elements in the original display to be hidden
   var gameRules = document.getElementById('gameRules');
@@ -191,4 +228,4 @@ function clickedToStartTimerPresentQuestion() {
   //call two other starting functions
   startTimer();
   displayQuestion();
-}
+} */
