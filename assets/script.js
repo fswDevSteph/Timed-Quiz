@@ -8,13 +8,15 @@ var timeRemaining = 120; //time in seconds
 var currentQuestionIndex = 0;
 var score = 0; // Initialize the score variable
 function handleHighScore() {
+  document.getElementById('initialBox').classList.remove('hide');
   var typeInitials = document.getElementById('typeInitial');
   var saveBtn = document.getElementById('saveBtn');
   saveBtn.addEventListener('click', function () {
     var usersArray = JSON.parse(localStorage.getItem('user')) || []; //JSON.parse turns a string into an array
-    usersArray.append({ initials: typeInitials, score: score });
+    usersArray.push({ initials: typeInitials.value, score: score });
     localStorage.setItem('user', JSON.stringify(usersArray));
   }); // stringify turns array back into a string
+  clearInterval(timer); //stops timer
 
   var grabQuizContainer = document.getElementById('quizContainer');
   grabQuizContainer.classList.add('hide');
