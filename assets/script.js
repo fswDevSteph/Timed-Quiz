@@ -175,8 +175,6 @@ function displayQuestion() {
   //clear out quizContainer so we can remove past questions, this only comes into play when we are on the second or any question after the first
   document.getElementById('quizContainer').innerHTML = '';
 
-  //need to create an h2 element to display the question
-
   var h2Question = document.createElement('h2');
   h2Question.innerText = currentQuestion.question;
   // now we have an h2 element that is going to be able to display to the page so lets append it
@@ -212,7 +210,8 @@ document
     //start of function
     event.preventDefault();
     console.log(currentQuestionIndex);
-    if (questions[currentQuestionIndex]) {
+    console.log(questions.length - 1, currentQuestionIndex);
+    if (questions.length - 1 > currentQuestionIndex) {
       //ts saying "if theres any q's left in q's array"
       currentQuestionIndex++; //then increment currentQuestionINdex by 1
       displayQuestion(); //calling function degined elsewhere to display next question
