@@ -9,7 +9,9 @@ This project is a Timed Quiz built with HTML, CSS and JavaScript.
 
 ## Image of Password Generator
 
-# <link src="">
+<img src="assets/Images-videos/TimedQuizImg.png">
+
+## Timed Quiz Repo: https://github.com/fswDevSteph/Timed-Quiz
 
 ## Live link to projec: https://fswdevsteph.github.io/Password-Generator/
 

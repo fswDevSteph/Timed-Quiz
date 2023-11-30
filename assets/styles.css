@@ -8,10 +8,6 @@ body {
     color: var(--seaSaltWhite);
 }
 
-h1 {
-    color: var(--seaSaltWhite);
-}
-
 main {
     display: flex;
     justify-content: center;
@@ -30,4 +26,24 @@ main {
 
 .hide {
     display: none;
+}
+
+main h1 {
+    display: flex;
+    text-align: center;
+    justify-content: baseline;
+    margin-bottom: 2.5rem;
+}
+
+main h2 {
+
+    display: flex;
+    text-align: center;
+    justify-content: baseline;
+    margin-bottom: 3rem;
+}
+
+
+#startBtn {
+    margin-top: 3rem;
 }

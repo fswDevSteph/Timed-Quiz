@@ -1,3 +1,18 @@
+<!-- Requirements:
+
+GIVEN I am taking a code quiz
+WHEN I click the start button -done
+THEN a timer starts and I am presented with a question -done
+WHEN I answer a question -done
+THEN I am presented with another question - done
+WHEN I answer a question incorrectly
+THEN time is subtracted from the clock -done
+WHEN all questions are answered or the timer reaches 0
+THEN the game is over - done
+WHEN the game is over
+THEN I can save my initials and score -done
+-->
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,34 +26,38 @@
 </head>
 
 <body>
-    <div class="container-lg">
-        <main>
 
-            <h1>Take an inspirational quotes "who said" quiz quiz </h1>
 
-            <div id="gameRules">
-                <p>A few rules:</p>
-                <ol>
-                    <li>Click "Start!" to begin your quiz</li>
-                    <li>You get a point for each correct answer</li>
-                    <li>You lose 5 seconds if you click the wrong answer</li>
-                    <li>Click the button to start...</li>
-                </ol>
-            </div>
+    <main>
 
-            <button id="startBtn">Start!</button>
-            <div id="initialBox" class="hide">
-                <h3>Save initials:</h3>
-                <input id="typeInitial" type="text" />
-                <button id="saveBtn">Save</button>
+        <h1>Take an inspirational quotes "who said" quiz </h1>
+        </div>
+        <h2>Test your knowledge and get a friendly reminder that you really can do what you set your mind to</h2>
 
-            </div>
-            <div id="timerDisplay">Time:</div>
-            <div id="scoreDisplay">Score: </div>
-    </div>
-    <div id="quizContainer">
-        <div id="resultsContainer"></div>
-        </main>
+
+        <div id="gameRules">
+            <p>A few rules:</p>
+            <ol>
+                <li>Click "Start!" to begin your quiz</li>
+                <li>You get a point for each correct answer</li>
+                <li>You lose 5 seconds if you click the wrong answer</li>
+                <li>Click the button to start...</li>
+            </ol>
+        </div>
+
+        <button id="startBtn">Start!</button>
+        <div id="initialBox" class="hide">
+            <h3>Save initials:</h3>
+            <input id="typeInitial" type="text" />
+            <button id="saveBtn">Save</button>
+
+        </div>
+        <div id="timerDisplay">Time:</div>
+        <div id="scoreDisplay">Score: </div>
+        </div>
+        <div id="quizContainer">
+            <div id="resultsContainer"></div>
+    </main>
     </div>
 
 </body>
