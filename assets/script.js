@@ -9,11 +9,40 @@ function handleHighScore() {
   document.getElementById('initialBox').classList.remove('hide');
   var typeInitials = document.getElementById('typeInitial');
   var saveBtn = document.getElementById('saveBtn');
+  var highScoreDisplay = document.getElementById('highScore');
   saveBtn.addEventListener('click', function () {
-    var usersArray = JSON.parse(localStorage.getItem('user')) || []; //JSON.parse turns a string into an array
-    usersArray.push({ initials: typeInitials.value, score: score });
+    var usersArray = JSON.parse(localStorage.getItem('user')) || []; //This line gets the 'user' array from the local storage. JSON.parse turns a string into an array
+    usersArray.push({ initials: typeInitials.value, score: score }); //adds current user to array
+    //save the updated usersArray to local storage
+    localStorage.setItem('user', JSON.stringify(usersArray));
+
+    // Display final score
+    var finalScoreDisplay = document.getElementById('finalScoreDisplay');
+    finalScoreDisplay.textContent = 'Final Score: ' + score;
+    //Display high score
+    var highScores = usersArray
+      .map(function (user) {
+        return user.initials + ': ' + user.score;
+      })
+      .join('<br>');
+
+    highScoreDisplay.innerHTML = 'High Scores:<br>' + highScores;
+    usersArray.forEach(function (user) {
+      //forEach iterates over each elements in the 'usersArray'
+      //the function takes 'user' as a peramter to represent each element in the array
+      var userScore = document.createElement('div');
+      userScore.textContent = user.initials + ': ' + user.score;
+      highScoreContainer.appendChild(userScore);
+    });
+    // usersArray.push({ initials: typeInitials.value, score: score });
     localStorage.setItem('user', JSON.stringify(usersArray));
   }); // stringify turns array back into a string
+  var resultsContainer = document.getElementById('resultsContainer');
+  resultsContainer.innerHTML = ''; // clears previous content result
+  var highScoreContainer = document.createElement('div');
+  highScoreContainer.classList.add('highScoreContainer');
+
+  resultsContainer.appendChild(highScoreContainer);
   clearInterval(timer); //stops timer
 
   var grabQuizContainer = document.getElementById('quizContainer');
@@ -23,7 +52,13 @@ function handleHighScore() {
   //set itemfunction to store changed array (this is the one i get with get item)
   //();
   var resultsContainer = document.getElementById('resultsContainer');
-  resultsContainer.append(initialBox, submitInitials); //<-note to add css
+  //resultsContainer.append(initialBox, submitInitials); //<- Error to resolve
+  // Append the input field to the resultsContainer
+  resultsContainer.innerHTML = ''; // clears previous content result
+  var highScoreContainer = document.createElement('div');
+  highScoreContainer.classList.add('highScoreContainer');
+  resultsContainer.append(typeInitials); // <-- Corrected line by chat GPT
+  resultsContainer.append(saveBtn); // <-- You might want to append the save button too suggestion by chat GPT
 }
 var questions = [
   // questions variable is an array
