@@ -11,7 +11,7 @@ This project is a Timed Quiz built with HTML, CSS and JavaScript.
 
 <img src="assets/Images-videos/TimedQuiz.png">
 
-## Timed Quiz Video: https://youtu.be/Cd7bMm8CYR4
+## Timed Quiz Video:https://youtu.be/G0tZ2cZpd90
 
 ## Timed Quiz Repo: https://github.com/fswDevSteph/Timed-Quiz
 
